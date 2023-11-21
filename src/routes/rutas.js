@@ -14,9 +14,9 @@ export const linksRutas = [
     name: "contactar",
     title: "Contactar",
   },
-  {
-    path: "/login",
-    name: "login",
-    title: "Iniciar Seccion",
-  },
+  // {
+  //   path: "/login",
+  //   name: "login",
+  //   title: "Iniciar Seccion",
+  // },
 ];

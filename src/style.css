@@ -1,31 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
 
 
 @tailwind base;
+h1 {
+  @apply text-2xl font-AltoneBold;
+}
+h2 {
+  @apply text-xl font-AltoneBold;
+}
+h3 {
+  @apply text-lg font-AltoneNormal;
+}
+h4 {
+  @apply text-base font-AltoneNormal;
+}
+h5 {
+  @apply text-sm font-AltoneNormal;
+}
+h6 {
+  @apply text-xs;
+}
+
+
 @tailwind components;
 @tailwind utilities;
 
 .font-work {
-    font-family: "Work Sans", sans-serif;
-  }
-  
-  .font-jost {
-    font-family: 'Jost', sans-serif;
-  }
-  
-  .font-sacramento {
-    font-family: 'Sacramento', cursive;
-  }
+  font-family: "Work Sans", sans-serif;
+}
 
-  .font-quicksand{
-    font-family: 'Quicksand', sans-serif;
-  }  
+.font-jost {
+  font-family: "Jost", sans-serif;
+}
 
-  @font-face {
-    font-family: 'walton';
-    src: url('./fonts/Walton_personal.ttf') format('truetype');
-    font-weight: 400; /* Ajusta según tus necesidades */
-    font-style: normal; /* Ajusta según tus necesidades */
-  }
+.font-sacramento {
+  font-family: 'Sacramento', cursive;
+}
+
+.font-quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.font-Inconsolata {
+  font-family: 'Inconsolata', sans-serif;
+}
+
+.font-Kdam {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+@font-face {
+  font-family: 'walton';
+  src: url('./fonts/Walton_personal.ttf') format('truetype');
+  font-weight: 400;
+  /* Ajusta según tus necesidades */
+  font-style: normal;
+  /* Ajusta según tus necesidades */
+}
+
+@font-face {
+  font-family: 'Abriosa';
+  src: url('./fonts/Abrosia.ttf') format('truetype');
+  font-weight: 400;
+  /* Ajusta según tus necesidades */
+  font-style: normal;
+  /* Ajusta según tus necesidades */
+}
+
+@font-face {
+  font-family: 'Magical';
+  src: url('./fonts/Magical-Childhood.ttf') format('truetype');
+  font-weight: 400;
+  /* Ajusta según tus necesidades */
+  font-style: normal;
+  /* Ajusta según tus necesidades */
+}
+
+@font-face {
+  font-family: 'AltoneNormal';
+  src: url('./fonts/AltoneTrial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  /* Ajusta según tus necesidades */
+  font-style: normal;
+  /* Ajusta según tus necesidades */
+}
+
+@font-face {
+  font-family: 'AltoneBold';
+  src: url('./fonts/AltoneTrial-Bold.ttf') format('truetype');
+  font-weight: 400;
+  /* Ajusta según tus necesidades */
+  font-style: normal;
+  /* Ajusta según tus necesidades */
+}
+
