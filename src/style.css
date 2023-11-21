@@ -1,3 +1,31 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-work {
+    font-family: "Work Sans", sans-serif;
+  }
+  
+  .font-jost {
+    font-family: 'Jost', sans-serif;
+  }
+  
+  .font-sacramento {
+    font-family: 'Sacramento', cursive;
+  }
+
+  .font-quicksand{
+    font-family: 'Quicksand', sans-serif;
+  }  
+
+  @font-face {
+    font-family: 'walton';
+    src: url('./fonts/Walton_personal.ttf') format('truetype');
+    font-weight: 400; /* Ajusta según tus necesidades */
+    font-style: normal; /* Ajusta según tus necesidades */
+  }

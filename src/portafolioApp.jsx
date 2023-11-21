@@ -1,5 +1,13 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { AppRouter } from "./routes/appRouter";
+import { Menu } from "./components/menu";
 
 export const PortafolioApp = () => {
-  return <div className=" font-serif">PortafolioApp - hola</div>;
+  return (
+    <BrowserRouter>
+      <Menu />
+      <AppRouter />
+    </BrowserRouter>
+  );
 };
