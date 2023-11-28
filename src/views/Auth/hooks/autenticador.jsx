@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checking } from "../../../store/Auth/Autenticacion";
+import { checking, onLogin, onLogout } from "../../../store/Auth/Autenticacion";
 import usuarios from "../../../services/usuarios";
 
 export const Autenticador = () => {
@@ -8,12 +8,25 @@ export const Autenticador = () => {
   const dispatch = useDispatch();
 
   const ingresarLogin = async (email, password) => {
+    
     dispatch(checking());
     const usuario = {
       email,
       password,
     };
-    await usuarios.login(usuario);
+
+    try {
+      const usuarioLogin = await usuarios.login(usuario);
+      localStorage.setItem("token", usuarioLogin.token);
+      dispatch(
+        onLogin({
+          email: usuarioLogin.payload.email,
+          rol: usuarioLogin.payload.rol,
+        })
+      );
+    } catch (error) {
+      dispatch(onLogout("Credenciales incorrectas"));
+    }
   };
 
   return { ingresarLogin };

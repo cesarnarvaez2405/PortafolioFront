@@ -18,14 +18,7 @@ let response = [];
 export default {
   async login(body) {
     try {
-      console.log(body);
-      response = await axios.post(`${API.node}portafolio/v1/auth/login`, body,
-        {
-          withCredentials: true,
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
+      response = await axios.post(`${API.node}portafolio/v1/auth/login`, body,)
       return response.data
 
     } catch (error) {
