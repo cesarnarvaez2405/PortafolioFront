@@ -13,7 +13,6 @@ export const Autenticador = () => {
       email,
       password,
     };
-    console.log(usuario);
     await usuarios.login(usuario);
   };
 
