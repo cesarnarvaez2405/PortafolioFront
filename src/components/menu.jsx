@@ -6,15 +6,8 @@ import { Link } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import { useAuthUtils } from "../hooks/utils/useAuthUtils";
 
-export const Menu = () => {
+export const Menu = (props) => {
   const { status } = useAuthUtils();
-  const [estaAutenticado, setEstaAutenticado] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setEstaAutenticado(status === "autenticado");
-    }, "1000");
-  }, []);
 
   return (
     <>
@@ -38,19 +31,11 @@ export const Menu = () => {
             ))}
           </div>
         </div>
-        {!estaAutenticado && (
-          <div className=" font-AltoneBold col-start-8 flex justify-end pr-10 items-center cursor-pointer">
-            <Link
-              data-tooltip-id="my-tooltip"
-              data-tooltip-content="Iniciar sección"
-              to="/login"
-            >
-              <IconLogin />
-            </Link>
-
-            <Tooltip id="my-tooltip" />
-          </div>
-        )}
+        <div className=" font-AltoneBold col-start-8 flex justify-end pr-10 items-center cursor-pointer">
+          {status === "checking" && props.onLoading()}
+          {status === "no autenticado" && props.onLogin()}
+          {status === "autenticado" && props.onPerfil()}
+        </div>
       </div>
     </>
   );

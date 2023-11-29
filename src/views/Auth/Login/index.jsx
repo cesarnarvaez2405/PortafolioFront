@@ -15,7 +15,6 @@ export const Login = () => {
   } = useForm();
 
   const onSubmit = async (event) => {
-    console.log(event);
     const { email, password } = event;
     ingresarLogin(email, password);
   };

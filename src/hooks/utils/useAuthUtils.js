@@ -23,6 +23,7 @@ export const useAuthUtils = () => {
       );
     } catch (error) {
       dispatch(onLogout("Tiempo expirado"));
+      localStorage.setItem("token", "");
     }
   };
 

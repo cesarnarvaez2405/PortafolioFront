@@ -4,13 +4,15 @@ import { AppRouter } from "./routes/appRouter";
 import { Menu } from "./components/menu";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { useAuthUtils } from "./hooks/utils/useAuthUtils";
+import { BtnLogin } from "./components/partials/BtnLogin";
+import { IconLoading } from "./components/icons/IconLoading";
+import { BtnPerfil } from "./components/partials/btnPerfil";
 
 export const PortafolioApp = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Menu />
+        <Menu onLoading={() => <IconLoading />} onLogin={() => <BtnLogin />} onPerfil={() => <BtnPerfil/>} />
         <AppRouter />
       </BrowserRouter>
     </Provider>
