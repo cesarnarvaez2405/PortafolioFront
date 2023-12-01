@@ -4,6 +4,7 @@ import { Home } from "../views/home/index";
 import { Proyectos } from "../views/Proyectos/index";
 import { Contactar } from "../views/Contactar/index";
 import { Login } from "../views/Auth/Login/index";
+import { Dashboard } from "../views/dashboard";
 import { useAuthUtils } from "../hooks/utils/useAuthUtils";
 
 export const AppRouter = () => {
@@ -25,12 +26,13 @@ export const AppRouter = () => {
           </>
         ) : (
           <>
-            <Route path="/proyectos" element={<Proyectos />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </>
         )}
         <Route path="/" element={<Home />} />
         <Route path="/contactar" element={<Contactar />} />
         <Route path="/*" element={<Navigate to="/" />} />
+        <Route path="/proyectos" element={<Proyectos />} />
       </Routes>
     </>
   );

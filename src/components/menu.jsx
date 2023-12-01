@@ -20,18 +20,21 @@ export const Menu = (props) => {
         </div>
         <div className=" col-start-4 col-span-4 flex justify-end items-center ">
           <div className=" flex flex-row gap-3 ">
-            {linksRutas.map((ruta) => (
-              <Link
-                to={ruta.path}
-                className=" ease-in-out duration-150 cursor-pointer p-3 py-5 font-AltoneNormal rounded-md hover:text-sky-900"
-                key={ruta.name}
-              >
-                <h4>{ruta.title}</h4>
-              </Link>
-            ))}
+            {linksRutas.map(
+              (ruta) =>
+                (!ruta.mostrarLogueado || status === "autenticado") && (
+                  <Link
+                    to={ruta.path}
+                    className="ease-in-out duration-150 cursor-pointer p-3 py-5 font-AltoneNormal rounded-md hover:text-sky-900"
+                    key={ruta.name}
+                  >
+                    <h4>{ruta.title}</h4>
+                  </Link>
+                )
+            )}
           </div>
         </div>
-        <div className=" font-AltoneBold col-start-8 flex justify-end pr-10 items-center cursor-pointer">
+        <div className=" font-AltoneBold col-start-8 flex justify-end pr-10 items-center">
           {status === "checking" && props.onLoading()}
           {status === "no autenticado" && props.onLogin()}
           {status === "autenticado" && props.onPerfil()}
