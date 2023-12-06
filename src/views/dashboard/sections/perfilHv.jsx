@@ -8,7 +8,7 @@ export const PerfilHv = () => {
         <Title>
           <h2>Perfil Hv</h2>
         </Title>
-        <div className=" w-full h-full bg-slate-100 grid grid-rows-4">
+        <div className=" w-full h-full  grid grid-rows-4">
           <div className=""></div>
         </div>
       </div>
