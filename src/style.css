@@ -3,25 +3,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 
 
 @tailwind base;
+
 h1 {
   @apply text-2xl font-AltoneBold;
 }
+
 h2 {
   @apply text-xl font-AltoneBold;
 }
+
 h3 {
   @apply text-lg font-AltoneNormal;
 }
+
 h4 {
   @apply text-base font-AltoneNormal;
 }
+
 h5 {
   @apply text-sm font-AltoneNormal;
 }
+
 h6 {
   @apply text-xs;
 }
@@ -52,6 +59,11 @@ h6 {
 
 .font-Kdam {
   font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+  ;
 }
 
 @font-face {
@@ -98,4 +110,3 @@ h6 {
   font-style: normal;
   /* Ajusta según tus necesidades */
 }
-

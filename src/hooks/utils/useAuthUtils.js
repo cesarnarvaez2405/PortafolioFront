@@ -29,7 +29,7 @@ export const useAuthUtils = () => {
 
   const cerrarSeccion = () => {
     localStorage.setItem("token", "");
-    // dispatch(onLogout("Cerró seccion"));
+    dispatch(onLogout("Cerró seccion"));
   };
 
   return {

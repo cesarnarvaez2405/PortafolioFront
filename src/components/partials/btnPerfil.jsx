@@ -38,8 +38,8 @@ export const BtnPerfil = () => {
               <span className=" font-AltoneNormal">Mi perfil</span>
             </div>
             <div
+              onClick={cerrarSeccion}
               className=" flex flex-row p-1  my-2 border-b border-black border-opacity-5 w-full hover:bg-slate-300 rounded-sm cursor-pointer"
-              onClick={cerrarSeccion()}
             >
               <span className="font-AltoneNormal">Salir</span>
             </div>

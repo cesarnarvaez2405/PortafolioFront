@@ -24,6 +24,7 @@ export default {
         Magical: ["Magical", "sans-serif"],
         AltoneNormal: ["AltoneNormal", "sans-serif"],
         AltoneBold: ["AltoneBold", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
       },
     },
   },
