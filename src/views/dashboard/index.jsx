@@ -11,10 +11,10 @@ export const Dashboard = () => {
 
   return (
     <>
-      <div className="w-full h-screen bg-white shadow-xl rounded-lg flex overflow-x-auto custom-scrollbar">
-        <div className="w-64 h-full px-4">
-          <div className="px-2 pt-4 pb-8 border-r h-full border-gray-300">
-            <ul className="space-y-2 font-Inter">
+      <div className='w-full h-screen bg-white shadow-xl rounded-lg flex overflow-x-auto custom-scrollbar'>
+        <div className='w-64 h-full px-4'>
+          <div className='px-2 pt-4 pb-8 border-r h-full border-gray-300'>
+            <ul className='space-y-2 font-Inter'>
               <li>
                 <a
                   onClick={() => setTab(0)}
@@ -22,7 +22,7 @@ export const Dashboard = () => {
                     tab === 0 ? "bg-gray-500" : ""
                   } `}
                 >
-                  <span className="flex items-center space-x-2">
+                  <span className='flex items-center space-x-2'>
                     <IconPerfil />
                     <span>Perfil HV</span>
                   </span>
@@ -53,7 +53,7 @@ export const Dashboard = () => {
             </ul>
           </div>
         </div>
-        <div className="flex-1 px-2">
+        <div className='flex-1 px-2'>
           {tab === 0 && <PerfilHv></PerfilHv>}
           {tab === 1 && <Proyectos></Proyectos>}
           {tab === 2 && <Trayectoria></Trayectoria>}
