@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { checking, onLogin, onLogout } from "../../store/auth/Autenticacion";
+import { checking, onLogin, onLogout } from "../../store/Auth/Autenticacion";
 import usuarios from "../../services/usuarios";
 
 export const useAuthUtils = () => {
