@@ -21,7 +21,7 @@ export const Login = () => {
 
   return (
     <>
-      <form handleSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className=" min-h-screen pb-20 bg-slate-100 flex justify-center items-center">
           <div className=" w-[30%] h-full bg-sky-900 flex flex-col px-8 py-7 rounded-xl shadow-xl shadow-gray-800">
             <div className=" flex flex-col justify-center text-white items-center">
