@@ -4,9 +4,7 @@ export const useDocsUtils = () => {
   const enviarImagen = async (imagen) => {
     const archivo = new FormData();
     archivo.append("file", imagen);
-    console.log(archivo);
-    const response = await documentosS3.enviarImagen(archivo);
-    console.log(response);
+    return await documentosS3.enviarImagen(archivo);
   };
 
   return { enviarImagen };

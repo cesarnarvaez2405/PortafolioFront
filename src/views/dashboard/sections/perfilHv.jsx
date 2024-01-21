@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Select from "react-select";
 import { Controller, useForm } from "react-hook-form";
 import makeAnimated from "react-select/animated";
@@ -6,20 +6,40 @@ import { Title } from "../../../components/title";
 import { lenguajes } from "../../../data/lenguajesPrograming";
 import { useDocsUtils } from "../../../hooks/utils/useDocsUtils";
 import { AlertError } from "../../../components/alertError";
+import { usePerfil } from "../hooks/usePerfil";
+import perfilService from "../../../services/perfil";
 
 export const PerfilHv = () => {
   const { enviarImagen } = useDocsUtils();
+  const { guardarPerfil } = usePerfil();
   const animatedComponents = makeAnimated();
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
+    setValue,
   } = useForm();
 
+  const [tienePerfil, setTienePerfil] = useState(false);
+
   const onSubmit = async (event) => {
-    console.log(event);
+    if (tienePerfil) {
+      console.log("actualiza");
+    } else {
+      await guardarPerfil(event);
+    }
   };
+
+  useEffect(() => {
+    perfilService.getPerfil().then((dato) => {
+      if (dato && dato.length > 0) {
+        setValue("titulo", dato[0].titulo);
+        setValue("descripcion", dato[0].descripcion);
+        setTienePerfil(true);
+      }
+    });
+  }, [setValue]);
 
   return (
     <>
@@ -147,7 +167,7 @@ export const PerfilHv = () => {
               </div>
               <div className=" py-4">
                 <button className="bg-sky-900 px-2 py-1 rounded-md font-Inter text-white hover:bg-sky-800 duration-150 ease-in-out">
-                  Guardar cambios
+                  {tienePerfil ? "Actualizar" : "Guardar"}
                 </button>
               </div>
             </form>
