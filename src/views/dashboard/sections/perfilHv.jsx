@@ -10,7 +10,6 @@ import { usePerfil } from "../hooks/usePerfil";
 import perfilService from "../../../services/perfil";
 
 export const PerfilHv = () => {
-  const { enviarImagen } = useDocsUtils();
   const { guardarPerfil } = usePerfil();
   const animatedComponents = makeAnimated();
   const {
@@ -19,15 +18,17 @@ export const PerfilHv = () => {
     control,
     formState: { errors },
     setValue,
+    reset,
   } = useForm();
 
   const [tienePerfil, setTienePerfil] = useState(false);
 
   const onSubmit = async (event) => {
     if (tienePerfil) {
-      console.log("actualiza");
+      console.log("tienePerfil");
     } else {
       await guardarPerfil(event);
+      reset();
     }
   };
 
@@ -37,6 +38,10 @@ export const PerfilHv = () => {
         setValue("titulo", dato[0].titulo);
         setValue("descripcion", dato[0].descripcion);
         setTienePerfil(true);
+        const skills = lenguajes.filter((lenguaje) =>
+          dato[0].skills.some((skill) => skill.skillId === lenguaje.value)
+        );
+        setValue("skill", skills);
       }
     });
   }, [setValue]);

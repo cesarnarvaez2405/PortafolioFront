@@ -23,23 +23,14 @@ let response = [];
  */
 
 export default {
-  async getPerfil() {
-    try {
-      response = await axios.get(`${API.node}portafolio/v1/perfil`, configApi);
-      return response.data;
-    } catch (error) {
-      errorConfig(error);
-    }
-  },
-
-  async addPerfil(body) {
+  async addSkills(body) {
     try {
       response = await axios.post(
-        `${API.node}portafolio/v1/perfil`,
+        `${API.node}portafolio/v1/skills`,
         body,
         configApi
       );
-      return response.data;
+      return Swal.fire(response.data.mensaje);
     } catch (error) {
       errorConfig(error);
     }
